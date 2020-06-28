@@ -1,0 +1,215 @@
+
+.content{
+    width: 100%;
+}
+.container{
+    width: 1118px;
+    margin: 0 auto;
+}
+a{
+    color: black;
+}
+#header1{
+    display: flex;
+    height: 110px;
+    font-size: 12px;
+    align-items: center;
+    color:#666666;
+    width: 100%;
+}
+
+#header1 a{
+    color: #666666;
+}
+#header1 a:hover{
+    text-decoration: underline;
+    color: #a01f23;
+}
+#header1 .headerIcon{
+    margin-left: 30px;
+    display: flex;
+    width: 150px;
+
+}
+#header1 .headerIcon img{
+    width: 43px;
+    height: 43px;
+}
+#header1 .headerIcon .headerMenu{
+    /* float: right; */
+    /* display: none; */
+    line-height: 34px;
+    margin-left: 10px;
+    position: relative;
+    width: 100px;
+    cursor: pointer;
+}
+#header1 .headerIcon .headerMenu span{
+    font-size: 12px;
+}
+#header1 .headerMenu .headerList{
+    padding: 6px 0;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 34px;
+    border: 1px solid #c9c9c9;
+    line-height: 24px;
+    width: 80px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    z-index: 10;
+}
+#header1 .headerMenu .headerList li{
+    height: 20px;
+}
+/* #header .headerMenu:hover .headerList{
+    display: block;
+} */
+#header1 .headerLogo{
+    flex:1;
+}
+#header1 .headerLogo img{
+    margin: 0 auto;
+}
+#header1 .headerRight{
+    width: 500px;
+    display: flex;
+    height: 28px;
+    line-height: 28px;
+    justify-content: space-between;
+}
+#header1 .headerRight .login{
+    width: 150px;
+}
+#header1 .headerRight .login a{
+    text-decoration: underline;
+}
+#header1 .headerRight .login .exit{
+    display: none;
+}
+#header1 .headerNav{
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+    /* position: relative; */
+}
+#header1 .headerNav>li{
+    position: relative;
+    flex: 1;
+    cursor: pointer;
+    background-color: #fff;
+    /* background-color: green; */
+}
+#header1 .headerNav>li span{
+    font-size: 12px;
+}
+#header1 .headerNav>li ul{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    top: 28px;
+    left:50%;
+    border: 1px solid #c9c9c9;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    transform: translateX(-50%);
+    z-index: 10;
+    /* background-color: pink; */
+}
+/* #header .headerNav>li:hover ul{
+    display: block;
+} */
+#header1 .headerNav>li:nth-of-type(1)>ul{
+    width: 80px;
+}
+#header1 .headerNav>li:nth-of-type(2)>ul{
+    width: 190px;
+}
+#header1 .headerNav>li:nth-of-type(3)>ul{
+    width: 80px;
+}
+/* #header .headerNav li ul li{
+    text-align: center;
+} */
+#header1 .headerRight .phone{
+    width: 70px;
+    margin-right: 24px;
+    text-align: right;
+    position: relative;
+}
+#header1 .headerRight .phone .weixin{
+    position: absolute;
+    right: 0;
+    top: 28px;
+    display: none;
+    z-index: 10;
+}
+/* #header .phone:hover .weixin{
+    display: block;
+} */
+#mainNav{
+    height: 44px;
+    background-color: #f0f0f0;
+    font-size: 14px;
+    color: #7c7b7b;
+    width: 100%;
+}
+#mainNav a{
+    color: #7c7b7b;
+}
+#mainNav a:hover{
+    text-decoration: underline;
+    color: #a01f23;
+}
+#mainNav .centerNav{
+    width: 945px;
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+#mainNav .centerNav .mainList{
+    display: flex;
+}
+#mainNav .centerNav .mainList li{
+    padding: 0 26px;
+}
+#mainNav .centerNav .mainRight{
+    
+}
+#mainNav .mainRight input{
+    width: 133px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #747474;
+}
+#mainNav .mainRight span{
+    font-size: 18px;
+    cursor: pointer;
+    display: block;
+    width: 42px;
+    height: 38px;
+    float: right;
+    line-height: 38px;
+    /* text-align: center; */
+}
+#shoppingCar{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    z-index: 100;
+}
+#shoppingCar a{
+    width: 60px;
+    height: 50px;
+    background-color: pink;
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+}
+
+

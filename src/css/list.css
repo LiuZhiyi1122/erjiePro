@@ -1,0 +1,202 @@
+#main-content{
+    width: 1120px;
+    margin: 33px auto;
+    display: flex;
+    justify-content: space-between;
+}
+#main-content .guess{
+    width: 200px;
+}
+#main-content .guess .guess-text{
+    width: 100%;
+    height: 72px;
+    line-height: 72px;
+    text-align: center;
+    background-color: #e3e3e3;
+    font-size: 20px;
+    font-weight: 900;
+    color: #333333;
+}
+#main-content .guess .guess-detail{
+    width: 100%;
+}
+#main-content .guess-detail li{
+    position: relative;
+    width: 200px;
+    height: 124px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+}
+#main-content li .ranking{
+    width: 26px;
+    height: 28px;
+    background: url('https://img.dnfcity.qq.com/goodsImages/15imgjs/images/list/listhot.png') no-repeat;
+    line-height: 28px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+
+} 
+#main-content li .detail-infor{
+    margin-left: 10px;
+    margin-top: 22px;
+}
+#main-content .guess-detail li a{
+    font-size: 14px;
+    line-height: 26px;
+    color: #333;
+    height: 26px;
+    overflow: hidden;
+    display: block
+}
+#main-content .guess-detail li p{
+    font-size: 12px;
+    color: #666666;
+}
+#main-content .guess-detail li p span{
+    color: #ee4727;
+    padding-left: 2px;
+}
+#main-content .guess-detail li em{
+    font-size: 12px;
+    color: #666666;
+}
+#main-content .main-list{
+    width: 904px;
+}
+#main-content .main-list .list-nav{
+    width: 896px;
+    height: 85px;
+    border: 4px solid #e3e3e3;
+    /* overflow: hidden; */
+}
+#main-content .list-nav .detail-list{
+    width: 856px;
+    height: 53px;
+    margin-top: 11px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    margin-left: 20px;
+}
+#main-content .list-nav .detail-list .active{
+    background-color: #ec4828;
+    color: white;
+}
+
+#main-content .detail-list>li{
+    margin-right: 42px;
+    height: 30px;
+    width: 80px;
+    margin-top: 11px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+}
+/* #main-content .detail-list li a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+    text-align: center;
+} */
+#main-content .detail-list li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#main-content .detail-list li a:hover{
+    text-decoration: underline;
+    background-color: #e3e3e3;
+}
+#main-content .detail-list .active a{
+    color: white;
+}
+#main-content .detail-list .active a:hover{
+    background-color: #ec4828;
+}
+#main-content .detail-list li:nth-of-type(1){
+    color:#999999;
+}
+#main-content .detail-list li a{
+    font-size: 14px;
+}
+#main-content .detail-list .min-nav{
+    width: 370px;
+    border: 1px solid #e7e7e7;
+    display: none;
+    position: absolute;
+    left: -95px;
+    top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#main-content .detail-list .min-nav li{
+    padding-right: 20px;
+
+}
+#main-content .min-nav li a{
+    font-size: 12px;
+    color: #666666;
+}
+#main-content .min-nav li:nth-of-type(1){
+    font-size: 12px;
+    color: #000;
+}
+#main-content .goods-infor{
+    display: flex;
+    width: 904px;
+    flex-wrap: wrap;
+}
+#main-content .list-detail li{
+    width: 225px;
+    height: 385px;
+    border-right: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    text-align: center;
+}
+.list-detail li .goods-img{
+    width: 204px;
+    height: 284px;
+    margin: 15px auto;
+    border: none;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.list-detail li .goods-img:hover{
+    border: 2px solid #eeeeee;
+}
+.list-detail li .goods-img img{
+    width: 200px;
+    margin: 2px auto;
+}
+.list-detail li .goods-des{
+    width: 100%;
+    height: 73px;
+}
+.list-detail li .goods-des h4 a{
+      color: #333333;
+      font-size: 12px;
+      line-height: 36px;
+}
+.list-detail li .goods-des h4 a:hover{
+    text-align: center;
+}
+.list-detail li .goods-des p{
+    font-size: 12px;
+    color: #999999;
+}
+.list-detail li .goods-des p span{
+    padding-right: 8px;
+    color: #ee4727;
+}
+/* https://img.dnfcity.qq.com/goodsImages/15imgjs/images/list/listhot2.png
+https://img.dnfcity.qq.com/goodsImages/15imgjs/images/list/listhot.png
+https://img.dnfcity.qq.com/goodsImages/mall2015/1799/shop80.jpg
+*/

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1899347_x3gxu2jonc8.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/method.js"></script>
+</head>
+
+<body>
+
+    <div id="header1" class="content">
+        <div class="headerIcon clear_fix">
+            <img src="../image/logo.png" alt="">
+            <div class="headerMenu">下拉查看类目<span class="iconfont iconjiantou"></span>
+                <ul class="headerList">
+                    <a href="JavaScript:;">
+                        <li>礼包收藏</li>
+                    </a>
+                    <a href="JavaScript:;">
+                        <li>手办模型</li>
+                    </a>
+                    <a href="JavaScript:;">
+                        <li>玩家共创</li>
+                    </a>
+                    <a href="JavaScript:;">
+                        <li>新品专区</li>
+                    </a>
+                    <a href="JavaScript:;">
+                        <li>数码电子</li>
+                    </a>
+                    <a href="JavaScript:;">
+                        <li>服饰日常</li>
+                    </a>
+                </ul>
+
+            </div>
+        </div>
+        <div class="headerLogo"><img src="../image/head_logo.png" alt=""></div>
+        <div class="headerRight">
+            <div class="login">
+                <a href="./login.html" class="log">登录</a>&nbsp;/
+                <a href="./reg.html" class="reg">注册</a>
+                <a href="JavaScript:;" class="exit">退出</a>
+            </div>
+            <ul class="headerNav">
+                <li class="headerNavList">我的订单<span class="iconfont iconjiantou"></span>
+                    <ul>
+                        <li><a href="JavaScript:;">我的订单</a></li>
+                        <li><a href="JavaScript:;">我的收藏</a></li>
+                        <li><a href="JavaScript:;">我的优惠券</a></li>
+                        <li><a href="JavaScript:;">我的道具</a></li>
+                    </ul>
+                </li>
+                <li class="headerNavList">周边公告<span class="iconfont iconjiantou"></span>
+                    <ul>
+                        <li><a href="JavaScript:;">北京部分地区物流停运公告</a></li>
+                        <li><a href="JavaScript:;">关于妙趣盒售卖事项的相关说明</a></li>
+                        <li><a href="JavaScript:;">周边商城用户体验调查</a></li>
+                        <li><a href="JavaScript:;">周边商城用户体验调查</a></li>
+                        <li><a href="JavaScript:;">周边商城用户体验调查</a></li>
+                    </ul>
+                </li>
+                <li class="headerNavList">帮助中心<span class="iconfont iconjiantou"></span>
+                    <ul>
+                        <li><a href="JavaScript:;">购物指南</a></li>
+                        <li><a href="JavaScript:;">配送方式</a></li>
+                        <li><a href="JavaScript:;">售后服务</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="phone"><span class="iconfont iconshouji"></span>手机周边
+                <div class="weixin"><img src="../image/weixin.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <div id="mainNav" class="content">
+        <div class="centerNav">
+
+            <ul class="mainList">
+                <li><a href="./index.html">商城首页</a></li>
+                |<li><a href="./list.html">全部商品</a></li>
+                |<li><a href="JavaScript:;">礼包收藏</a></li>
+                |<li><a href="JavaScript:;">领取游戏道具</a></li>
+                |<li><a href="JavaScript:;">土罐市场</a></li>
+                |<li><a href="JavaScript:;">妙趣盒·亮点大集结</a></li>
+            </ul>
+            <div class="mainRight">
+                <input type="text" placeholder="全站搜索" class="globalSecrch"><span class="iconfont iconsousuo"></span>
+            </div>
+        </div>
+    </div>
+    <div id="shoppingCar">
+        <a href="JavaScript:;">购物车</a>
+    </div>
+</body>
+<script>
+    $(function () {
+        console.log($('.log'));
+        $('.headerMenu').hover(function () {
+            $('.headerList').slideDown()
+        }, function () {
+            $('.headerList').slideUp()
+        });
+        //headerNavList
+        $('.headerNavList').hover(function () {
+            // console.log($(this).children('ul'))
+            $(this).children('ul').slideDown();
+            // console.log($(this));
+        }, function () {
+            $(this).children('ul').slideUp();
+        });
+        $('.phone').hover(function () {
+            $('.phone').find('.weixin').slideDown();
+        }, function () {
+            $('.phone').find('.weixin').slideUp();
+        })
+        const cookieObj = getCookieObj(document.cookie);
+        // console.log(cookieObj);
+        if (cookieObj.token) {
+            console.log($('.log'));
+            $('.log').html(cookieObj.username).css({
+                pointerEvents: 'none',
+                cursor: 'pointer'
+            });
+            $('.exit').css('display', 'inline-block');
+        };
+        $('#shoppingCar>a').click(function(){
+            if(!cookieObj.token){
+                window.alert('您还没有登录，点击确定登录！');
+                window.location.href='./login.html';
+            }else{
+                window.location.href='./shoppingCar.html';
+            }
+        })
+        $('.exit').click(function () {
+            setCookies('username', cookieObj.username, -1);
+            setCookies('uid', cookieObj.id, -1);
+            setCookies('token', cookieObj.token, -1);
+            window.alert('退出成功！');
+            $('.exit').css('display', 'none');
+            $('.log').html('登录').css({
+                pointerEvents: 'auto',
+                cursor: 'pointer'
+            });
+        })
+    })
+</script>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/shoppingCar.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1899347_x3gxu2jonc8.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/method.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div id="header1" class="content">
+        <div class="headerIcon clear_fix">
+            <img src="../image/logo.png" alt="">
+            <div class="headerMenu">下拉查看类目<span class="iconfont iconjiantou"></span>
+                <ul class="headerList">
+                    <a href="JavaScript:;">
+                        <li>礼包收藏</li>
+                    </a>
+                    <a href="JavaScript:;">
+                        <li>手办模型</li>
+                    </a>
+                    <a href="JavaScript:;">
+                        <li>玩家共创</li>
+                    </a>
+                    <a href="JavaScript:;">
+                        <li>新品专区</li>
+                    </a>
+                    <a href="JavaScript:;">
+                        <li>数码电子</li>
+                    </a>
+                    <a href="JavaScript:;">
+                        <li>服饰日常</li>
+                    </a>
+                </ul>
+
+            </div>
+        </div>
+        <div class="headerLogo"><img src="../image/head_logo.png" alt=""></div>
+        <div class="headerRight">
+            <div class="login">
+                <a href="./login.html" class="log">登录</a>&nbsp;/
+                <a href="./reg.html" class="reg">注册</a>
+                <a href="JavaScript:;" class="exit">退出</a>
+            </div>
+            <ul class="headerNav">
+                <li class="headerNavList">我的订单<span class="iconfont iconjiantou"></span>
+                    <ul>
+                        <li><a href="JavaScript:;">我的订单</a></li>
+                        <li><a href="JavaScript:;">我的收藏</a></li>
+                        <li><a href="JavaScript:;">我的优惠券</a></li>
+                        <li><a href="JavaScript:;">我的道具</a></li>
+                    </ul>
+                </li>
+                <li class="headerNavList">周边公告<span class="iconfont iconjiantou"></span>
+                    <ul>
+                        <li><a href="JavaScript:;">北京部分地区物流停运公告</a></li>
+                        <li><a href="JavaScript:;">关于妙趣盒售卖事项的相关说明</a></li>
+                        <li><a href="JavaScript:;">周边商城用户体验调查</a></li>
+                        <li><a href="JavaScript:;">周边商城用户体验调查</a></li>
+                        <li><a href="JavaScript:;">周边商城用户体验调查</a></li>
+                    </ul>
+                </li>
+                <li class="headerNavList">帮助中心<span class="iconfont iconjiantou"></span>
+                    <ul>
+                        <li><a href="JavaScript:;">购物指南</a></li>
+                        <li><a href="JavaScript:;">配送方式</a></li>
+                        <li><a href="JavaScript:;">售后服务</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="phone"><span class="iconfont iconshouji"></span>手机周边
+                <div class="weixin"><img src="../image/weixin.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <!-- 购物流程flow -->
+    <div id="flow" class="content">
+        <div class="flow-detail container">
+            <div class="flow-car">购物车页</div>
+            <div class="flow-blank"></div>
+        </div>
+    </div>
+    <!-- 购物车主体 -->
+    <div id="main-car" class="container">
+        <!-- 全选部分 -->
+        <div class="car-ctrl">
+            <div class="select">
+                <input type="checkbox" name="" id="selectAll" style="vertical-align:middle;"><label
+                    for="selectAll">全选</label>
+            </div>
+            <ul class="infors">
+                <li>商品</li>
+                <li>单价(元)</li>
+                <li>数量</li>
+                <li>小记</li>
+                <li>操作</li>
+            </ul>
+        </div>
+        <ul class="car-goods">
+            <!-- <li>
+                <div class="choose"><input type="checkbox" name="pitch-on" id=""></div>
+                <div class="goods-img">
+                    <div class="small-img">
+                        <img src="https://img.dnfcity.qq.com/goodsImages/mall2015/1453/shop80.jpg" alt="">
+
+                    </div>
+                    <div class="goods-dec">
+                        <h4>卢克与贝奇 Q版手办</h4>
+                        <p>颜色：<span>彩色</span></p>
+                        <p>尺码：<span>均码</span></p>
+                    </div>
+
+                </div>
+                <ul class="goods-num">
+                    <li>￥175.12</li>
+                    <li>
+                        <button name="cut-btn">-</button>
+                        <input type="text" value="1">
+                        <button name="cut-add">+</button>
+                    </li>
+                    <li>￥175.12</li>
+                    <li>
+                        <button class="goods-del">删除</button>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="choose"><input type="checkbox" name="pitch-on" id=""></div>
+                <div class="goods-img">
+                    <div class="small-img">
+                        <img src="https://img.dnfcity.qq.com/goodsImages/mall2015/1453/shop80.jpg" alt="">
+
+                    </div>
+                    <div class="goods-dec">
+                        <h4>卢克与贝奇 Q版手办</h4>
+                        <p>颜色：<span>彩色</span></p>
+                        <p>尺码：<span>均码</span></p>
+                    </div>
+
+                </div>
+                <ul class="goods-num">
+                    <li>￥175.12</li>
+                    <li>
+                        <button name="cut-btn">-</button>
+                        <input type="text" value="1">
+                        <button name="cut-add">+</button>
+                    </li>
+                    <li>￥175.12</li>
+                    <li>
+                        <button class="goods-del">删除</button>
+                    </li>
+                </ul>
+            </li> -->
+        </ul>
+        <div class="account">
+            <div class="total-num">
+                <span>商品金额：￥</span>
+                <span id="finalPrice">0</span>
+            </div>
+            <div class="clear">
+                <button>去结算</button>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+<script src="../js/shoppingcart.js"></script>
+<script>
+    $('#footer').load('./footer.html');
+</script>
+
+</html>
