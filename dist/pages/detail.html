@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详情页</title>
+    <link rel="stylesheet" href="../css/detail.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/method.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header"></div>
+        <!-- 详情部分 -->
+        <div id="main-content">
+            <!-- 左侧图片部分 -->
+            <!-- <div class="img-detail">
+                <ul class="big-img">
+                    <li>
+                        <img src="https://img.dnfcity.qq.com/goodsImages/mall2015/1730/da1.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="https://img.dnfcity.qq.com/goodsImages/mall2015/1730/da2.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="https://img.dnfcity.qq.com/goodsImages/mall2015/1730/da3.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="https://img.dnfcity.qq.com/goodsImages/mall2015/1730/da4.jpg" alt="">
+                    </li>
+                </ul>
+                
+                <div class="small-vessel">
+                   
+                    <ul class="small-img">
+                        <li>
+                            <span></span>
+                            <img src="https://img.dnfcity.qq.com/goodsImages/mall2015/1730/xiao1.jpg" alt=""></li>
+                        <li>
+                            <span></span>
+                            <img src="https://img.dnfcity.qq.com/goodsImages/mall2015/1730/xiao2.jpg" alt=""></li>
+                        <li>
+                            <span></span>
+                            <img src="https://img.dnfcity.qq.com/goodsImages/mall2015/1730/xiao3.jpg" alt=""></li>
+                        <li>
+                            <span></span>
+                            <img src="https://img.dnfcity.qq.com/goodsImages/mall2015/1730/xiao4.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="goods-infor">
+                <div class="goods-name">
+                    <h3>女格斗 软胶挂件</h3>
+                    <p>职业系列 软胶挂件全新上市！</p>
+                </div>
+                <div class="goods-price">
+                    现价<span>￥</span><span class="bigger">38</span>
+
+                </div>
+                <ul class="all-data">
+                    <li>
+                        <p>2</p>
+                        <p>60天销量</p>
+                    </li>
+                    <li>
+                        <p>0</p>
+                        <p>累计评论</p>
+                    </li>
+                    <li>
+                        <p>10</p>
+                        <p>累计喜欢</p>
+                    </li>
+                </ul>
+                
+                <ul class="goods-num">
+                    <li>
+                        <span>颜色</span>
+                        <img src="https://img.dnfcity.qq.com/goodsImages/mall2015/1730/xiao1.jpg" alt="">
+                    </li>
+                    <li>
+                        <span>尺码</span>
+                        <span>均码</span>
+                    </li>
+                    <li>
+                       <span>数量</span>
+                        <span>
+                            <button name="cut-btn">-</button>
+                            <input type="text" value="1">
+                            <button name="cut-add">+</button>
+                        </span>
+                    </li>
+                </ul>
+                
+                <div class="goods-buy">
+                    <button class="buy">立即购买</button>
+                    <button class="addCar">加入购物车</button>
+                    <p>赠送游戏道具/100%官方正品</p>
+                </div>
+            </div> -->
+        </div>
+        <div id="footer"></div>
+    </div>
+    <script>
+        $('#header').load('./header.html');
+        $('#footer').load('./footer.html');
+        let str = decodeURIComponent(window.location.search);
+        str = str.substr(1);
+        const arr = str.split('=');
+        const cookieObj1=getCookieObj(document.cookie)
+        $.ajax({
+            type: "get",
+            url: "http://jx.xuzhixiang.top/ap/api/detail.php",
+            data: {
+                id: arr[1]
+            },
+            dataType: "json",
+            success: function (res) {
+                console.log(res);
+                let str = '';
+                str = `<div class="img-detail">
+                <!-- 上面大图 -->
+                <ul class="big-img">
+                    <li>
+                        <img src="${res.data.pimg}" alt="">
+                    </li>
+                    <li>
+                        <img src="${res.data.pimg}" alt="">
+                    </li>
+                    <li>
+                        <img src="${res.data.pimg}" alt="">
+                    </li>
+                    <li>
+                        <img src="${res.data.pimg}" alt="">
+                    </li>
+                </ul>
+                <!-- 小图容器 -->
+                <div class="small-vessel">
+                    <!-- 小图 -->
+                    <ul class="small-img">
+                        <li>
+                            <span></span>
+                            <img src="${res.data.pimg}" alt=""></li>
+                        <li>
+                            <span></span>
+                            <img src="${res.data.pimg}" alt=""></li>
+                        <li>
+                            <span></span>
+                            <img src="${res.data.pimg}" alt=""></li>
+                        <li>
+                            <span></span>
+                            <img src="${res.data.pimg}" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 右侧信息 -->
+            <div class="goods-infor">
+                <div class="goods-name">
+                    <h3>${res.data.pname}</h3>
+                    <p>${res.data.pdesc}</p>
+                </div>
+                <div class="goods-price">
+                    现价<span>￥</span><span class="bigger">${res.data.pprice}</span>
+                    <!-- <span class="super">超值价</span> -->
+                </div>
+                <ul class="all-data">
+                    <li>
+                        <p>2</p>
+                        <p>60天销量</p>
+                    </li>
+                    <li>
+                        <p>0</p>
+                        <p>累计评论</p>
+                    </li>
+                    <li>
+                        <p>10</p>
+                        <p>累计喜欢</p>
+                    </li>
+                </ul>
+                <!-- 数量码数 -->
+                <ul class="goods-num">
+                    <li>
+                        <span>颜色</span>
+                        <img src="${res.data.pimg}" alt="">
+                    </li>
+                    <li>
+                        <span>尺码</span>
+                        <span>均码</span>
+                    </li>
+                    <li>
+                       <span>数量</span>
+                        <span>
+                            <button name="cut-btn">-</button>
+                            <input type="text" value="1" class="goods-numbers">
+                            <button name="add-btn">+</button>
+                        </span>
+                    </li>
+                </ul>
+                <!-- 添加购物车购买 -->
+                <div class="goods-buy">
+                    <button class="buy">立即购买</button>
+                    <button class="addCar">加入购物车</button>
+                    <p>赠送游戏道具/100%官方正品</p>
+                </div>
+            </div>`
+                $('#main-content').html(str);
+                $('.small-img>li').hover(function () {
+                    // console.log($(e));
+                    $(this).children('span').show().parent().siblings().children('span').hide();
+                    $('.img-detail>.big-img>li').eq($(this).index()).show().siblings().hide();
+                })
+                let num=$('.goods-numbers').val();
+                $('[name="cut-btn"]').click(function(){
+                    console.log($('.goods-numbers').val());
+                    if(num<=1){
+                        num=1;
+                        return;
+                    }
+                    $('.goods-numbers').val(--num);
+                })
+                $('[name="add-btn"]').click(function(){
+                    $('.goods-numbers').val(++num);
+                })
+                $('.goods-buy>.addCar').click(function(){
+                    if(cookieObj1.token){
+                        $.ajax({
+                            type: "get",
+                            url: "http://jx.xuzhixiang.top/ap/api/add-product.php",
+                            data: {uid:cookieObj1.uid,pid:arr[1],pnum:$('.goods-numbers').val()},
+                            dataType: "json",
+                            success: function (res) {
+                                console.log(res)
+                            }
+                        });
+                        var flag=window.confirm('是否跳转到购物车页面');
+                        if(flag===true){
+                            window.location.href='./shoppingCar.html';
+                        }
+                    }else{
+                        window.alert('请先登录');
+                        window.location.href='./login.html';
+                    }
+                })
+            }
+        });
+    </script>
+</body>
+
+</html>
